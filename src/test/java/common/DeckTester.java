@@ -9,8 +9,7 @@ public class DeckTester extends TestCase{
 	public void testDoesDeckHave52Cards() {		
 		Deck deck = new Deck();
 		
-		assertEquals(52, deck.cards.length);
-		
+		assertEquals(52, deck.cards.length);		
 	}
 	
 	//This method tests to see if the deck has been shuffled by appending the contents of the "Cards" array then comparing the strings.
