@@ -13,6 +13,7 @@ public class DealerTester extends TestCase{
 		
 		Player player = new Player();
 		Dealer dealer = new Dealer();
+		dealer.deck = new Deck();
 		
 		Dealer.dealStartingHand(player);
 		
@@ -27,6 +28,29 @@ public class DealerTester extends TestCase{
 		assertNotEquals(null, dealer.cards[0]);
 		assertNotEquals(null, player.cards[1]);
 		assertEquals(null, player.cards[2]);
+		
+	}
+	
+	public void testDealRandomCard() {
+		
+		Dealer dealer = new Dealer();
+		dealer.deck = new Deck();
+		
+		dealer.deal(dealer);
+		
+		assertNotEquals(null, dealer.cards[0]);
+		
+	}
+	
+	public void testDealSpecificCard() {
+		
+		Dealer dealer = new Dealer();
+		dealer.deck = new Deck();
+		
+		dealer.deck.shuffle();
+		dealer.deal("SK", dealer);
+		
+		assertEquals("SK", dealer.cards[0]);		
 		
 	}
 	
