@@ -9,28 +9,28 @@ public class RuleTester extends TestCase {
 		Rule ruleBook = new Rule();
 		
 		String [] hand1 = {"SK"};
-		assertEquals(20, ruleBook.currentScore(hand1));
+		assertEquals(10, ruleBook.currentScore(hand1));
 		
 		String [] hand2 = {"CK"};
-		assertEquals(20, ruleBook.currentScore(hand2)); //Proves that suits are ignored
+		assertEquals(10, ruleBook.currentScore(hand2)); //Proves that suits are ignored
 		
 		String [] hand3 = {"SQ"};
-		assertEquals(20, ruleBook.currentScore(hand3));
+		assertEquals(10, ruleBook.currentScore(hand3));
 		
 		String [] hand4 = {"SJ"};
-		assertEquals(20, ruleBook.currentScore(hand4));
+		assertEquals(10, ruleBook.currentScore(hand4));
 		
 		String [] hand5 = {"SA"};
-		assertEquals(20, ruleBook.currentScore(hand5));
+		assertEquals(11, ruleBook.currentScore(hand5));
 		
 		String [] hand6 = {"S6"};
-		assertEquals(20, ruleBook.currentScore(hand6));
+		assertEquals(6, ruleBook.currentScore(hand6));
 		
 		String [] hand7 = {"S10"};
-		assertEquals(20, ruleBook.currentScore(hand7));
+		assertEquals(10, ruleBook.currentScore(hand7));
 		
 		String [] hand8 = {"S11"};
-		assertEquals(20, ruleBook.currentScore(hand8));
+		assertEquals(-1, ruleBook.currentScore(hand8));
 		
 		String [] hand9 = {"SK", "SQ"};		
 		assertEquals(20, ruleBook.currentScore(hand9));
@@ -45,7 +45,10 @@ public class RuleTester extends TestCase {
 		assertEquals(17, ruleBook.currentScore(hand12)); //Ace is 11 in this case
 		
 		String [] hand13 = {"S7", "S3", "S5"};
-		assertEquals(15, ruleBook.currentScore(hand13));		
+		assertEquals(15, ruleBook.currentScore(hand13));
+		
+		String [] hand14 = {"S2", "C2", "S6", "S11", "S7"};
+		assertEquals(-1, ruleBook.currentScore(hand14)); //Will return -1 due to there being an invalid card.
 		
 	}
 	
