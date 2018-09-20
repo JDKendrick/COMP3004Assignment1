@@ -29,7 +29,7 @@ public class PlayerTester extends TestCase{
 		dealer.deal("C6", player);
 		dealer.deal("S9", player);
 		
-		assertEquals("Hand: C6, S9\nScore: 15\n", player.status(player.cards, ruleBook.currentScore(player.cards)));
+		assertEquals("Hand: C6, S9\nScore: 15\n", player.status(player.checkHand(), ruleBook.currentScore(player.cards)));
 		
 		
 	}

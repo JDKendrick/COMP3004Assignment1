@@ -25,4 +25,10 @@ public class Player {
 		
 	}	
 	
+	public String status(String hand, int score) {
+		
+		return "Hand: " + hand + "\n" + "Score: " + score + "\n";
+		
+	}
+	
 }

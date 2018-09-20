@@ -78,7 +78,7 @@ public class DealerTester extends TestCase{
 		dealer.deal("H10", dealer);
 		dealer.deal("C3", dealer);
 		
-		assertEquals("Hand: H10, C3\nScore: 13\n", dealer.status(dealer.cards, ruleBook.currentScore(dealer.cards)));
+		assertEquals("Hand: H10, Unknown\nScore: 13\n", dealer.status(dealer.checkHand(), ruleBook.currentScore(dealer.cards)));
 		
 		
 	}
