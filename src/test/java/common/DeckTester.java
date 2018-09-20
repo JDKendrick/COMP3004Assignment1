@@ -13,7 +13,7 @@ public class DeckTester extends TestCase{
 	}
 	
 	//This method tests to see if the deck has been shuffled by appending the contents of the "Cards" array then comparing the strings.
-	public void testIsDeckShuffled() {
+	public void testShuffle() {
 		Deck deck = new Deck();
 		Deck deck2 = new Deck();
 		

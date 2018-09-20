@@ -4,7 +4,7 @@ import junit.framework.TestCase;
 
 public class RuleTester extends TestCase {
 
-	public void testScore() {
+	public void testCurrentScore() {
 		
 		Rule ruleBook = new Rule();
 		
