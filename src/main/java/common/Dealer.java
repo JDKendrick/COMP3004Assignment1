@@ -2,7 +2,7 @@ package common;
 
 public class Dealer extends Player {
 	
-	Deck deck;
+	protected Deck deck;
 	
 	public Dealer() {deck = new Deck();}
 	

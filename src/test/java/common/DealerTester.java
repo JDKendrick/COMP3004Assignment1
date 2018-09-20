@@ -45,7 +45,6 @@ public class DealerTester extends TestCase{
 		
 		Dealer dealer = new Dealer();
 		Player player = new Player();
-		dealer.deck = new Deck();
 				
 		dealer.deck.shuffle();
 		dealer.deal("SK", player);
