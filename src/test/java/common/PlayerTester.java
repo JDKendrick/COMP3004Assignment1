@@ -18,5 +18,20 @@ public class PlayerTester extends TestCase{
 		assertEquals("SK, SQ", player.checkHand());		
 		
 	}
+	
+	public void testStatus() {
+		
+		Player player = new Player();
+		Dealer dealer = new Dealer();
+		Rule ruleBook = new Rule();
+		
+		dealer.deck.shuffle();
+		dealer.deal("C6", player);
+		dealer.deal("S9", player);
+		
+		assertEquals("Hand: C6, S9\nScore: 15\n", player.status(player.cards, ruleBook.currentScore(player.cards)));
+		
+		
+	}
 
 }

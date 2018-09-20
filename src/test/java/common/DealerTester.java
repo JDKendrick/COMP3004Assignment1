@@ -69,4 +69,18 @@ public class DealerTester extends TestCase{
 		
 	}
 	
+	public void testStatus() {
+		
+		Dealer dealer = new Dealer();
+		Rule ruleBook = new Rule();
+		
+		dealer.deck.shuffle();
+		dealer.deal("H10", dealer);
+		dealer.deal("C3", dealer);
+		
+		assertEquals("Hand: H10, C3\nScore: 13\n", dealer.status(dealer.cards, ruleBook.currentScore(dealer.cards)));
+		
+		
+	}
+	
 }
