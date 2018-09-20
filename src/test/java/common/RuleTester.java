@@ -19,4 +19,25 @@ public class RuleTester extends TestCase {
 		
 	}
 	
+	public void testScore() {
+		
+		Rule ruleBook = new Rule();
+		
+		String [] hand = {"SK", "SQ"};		
+		assertEquals("20", ruleBook.currentScore(hand));
+		
+		hand = {"SK", "SQ", "SJ"};
+		assertEquals("30", ruleBook.currentScore(hand));
+		
+		hand = {"SK", "SQ", "SA"};
+		assertEquals("21", ruleBook.currentScore(hand));
+		
+		hand = {"S6", "SA"};
+		assertEquals(17, ruleBook.currentScore(hand));
+		
+		hand = {"S7", "S3", "S5"};
+		assertEquals(15, ruleBook.currentScore(hand));		
+		
+	}
+	
 }
