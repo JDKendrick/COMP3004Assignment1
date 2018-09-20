@@ -45,5 +45,30 @@ public class Dealer extends Player {
 		this.deal(player);
 		
 	}
+	
+	//@override
+	public String checkHand() {
+		
+		String hand = "";
+		int i = 0;
+		
+		if(this.cards[0] == null) 
+			return "The dealer's hand is empty";
+		
+		while(this.cards[i] != null) {	
+			
+			//If the dealer has 2 and only 2 cards, the second card is shown as "unknown"
+			if(this.cards[i+1] == null && i+1 == 2)
+				return hand + "Unknown";
+			
+			hand = hand + this.cards[i] + ", ";
+			i++;
+			
+		}
+					
+		hand = hand.substring(0, hand.length() - 2); //Removes ", " from the end of the string
+		
+		return hand;
+	}
 
 }

@@ -66,7 +66,7 @@ public class DealerTester extends TestCase{
 		assertEquals("SK, Unknown", dealer.checkHand());
 		
 		dealer.deal("SA", dealer);
-		assertEquals("SA, SQ", "SA", dealer.checkHand());
+		assertEquals("SK, SQ, SA", dealer.checkHand());
 		
 	}
 	
