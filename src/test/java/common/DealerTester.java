@@ -53,4 +53,21 @@ public class DealerTester extends TestCase{
 		
 	}
 	
+	public void testCheckHand() {
+		
+		Dealer dealer = new Dealer();
+		
+		assertEquals("The dealer's hand is empty", dealer.checkHand());
+		
+		dealer.deal("SK", dealer);		
+		assertEquals("SK", dealer.checkHand()); 
+		
+		dealer.deal("SQ", dealer);
+		assertEquals("SK, Unknown", dealer.checkHand());
+		
+		dealer.deal("SA", dealer);
+		assertEquals("SA, SQ", "SA", dealer.checkHand());
+		
+	}
+	
 }
