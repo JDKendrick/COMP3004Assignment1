@@ -8,7 +8,6 @@ public class PlayerTester extends TestCase{
 		
 		Player player = new Player();
 		Dealer dealer = new Dealer();
-		dealer.deck = new Deck();
 		
 		dealer.deal("SK", player);		
 		assertEquals("SK", player.checkHand()); 

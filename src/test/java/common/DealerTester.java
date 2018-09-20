@@ -13,9 +13,8 @@ public class DealerTester extends TestCase{
 		
 		Player player = new Player();
 		Dealer dealer = new Dealer();
-		dealer.deck = new Deck();
 		
-		Dealer.dealStartingHand(player);
+		dealer.dealStartingHand(player);
 		
 		assertNotEquals(null, player.cards[0]);
 		assertNotEquals(null, player.cards[1]);
@@ -23,7 +22,7 @@ public class DealerTester extends TestCase{
 		assertEquals(null, dealer.cards[0]); //The following 2 tests confirm that the dealer has not received any cards yet. 
 		assertEquals(null, dealer.cards[1]);
 		
-		Dealer.dealStartingHand(dealer);
+		dealer.dealStartingHand(dealer);
 		
 		assertNotEquals(null, dealer.cards[0]);
 		assertNotEquals(null, player.cards[1]);
@@ -34,23 +33,23 @@ public class DealerTester extends TestCase{
 	public void testDealRandomCard() {
 		
 		Dealer dealer = new Dealer();
-		dealer.deck = new Deck();
+		Player player = new Player();
 		
-		dealer.deal(dealer);
+		dealer.deal(player);
 		
-		assertNotEquals(null, dealer.cards[0]);
+		assertNotEquals(null, player.cards[0]);
 		
 	}
 	
 	public void testDealSpecificCard() {
 		
 		Dealer dealer = new Dealer();
+		Player player = new Player();
 		dealer.deck = new Deck();
-		
+				
 		dealer.deck.shuffle();
-		dealer.deal("SK", dealer);
-		
-		assertEquals("SK", dealer.cards[0]);		
+		dealer.deal("SK", player);
+		assertEquals("SK", player.checkHand());		
 		
 	}
 	
