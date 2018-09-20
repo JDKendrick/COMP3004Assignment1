@@ -6,15 +6,16 @@ public class RuleTester extends TestCase {
 
 	public void testCardValue() {
 		
-		Game game = new Game();
+		Rule ruleBook = new Rule();
 		
-		game.getCardValue("SK");
-		game.getCardValue("CK");
-		game.getCardValue("SQ");
-		game.getCardValue("SJ");
-		game.getCardValue("SA");
-		game.getCardValue("S6");
-		game.getCardValue("S10");
+		assertEquals(10, ruleBook.getCardValue("SK"));
+		assertEquals(10, ruleBook.getCardValue("CK"));
+		assertEquals(10, ruleBook.getCardValue("SQ"));
+		assertEquals(10, ruleBook.getCardValue("SJ"));
+		assertEquals(1, ruleBook.getCardValue("SA"));
+		assertEquals(6, ruleBook.getCardValue("S6"));
+		assertEquals(10, ruleBook.getCardValue("S10"));
+		assertEquals(-1, ruleBook.getCardValue("S11"));
 		
 	}
 	
