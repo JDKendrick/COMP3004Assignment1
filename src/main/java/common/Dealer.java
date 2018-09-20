@@ -3,8 +3,14 @@ package common;
 public class Dealer extends Player {
 	
 	protected Deck deck;
+	boolean hideCard;
 	
-	public Dealer() {deck = new Deck();}
+	public Dealer() {
+		
+		deck = new Deck();
+		hideCard = true;
+					
+	}
 	
 	public void deal(Player player) {
 		
@@ -58,7 +64,7 @@ public class Dealer extends Player {
 		while(this.cards[i] != null) {	
 			
 			//If the dealer has 2 and only 2 cards, the second card is shown as "unknown"
-			if(this.cards[i+1] == null && i+1 == 2)
+			if(this.hideCard == true && i+1 == 2)
 				return hand + "Unknown";
 			
 			hand = hand + this.cards[i] + ", ";

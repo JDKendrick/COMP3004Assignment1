@@ -60,6 +60,7 @@ public class RuleTester extends TestCase {
 		assertEquals(12, ruleBook.currentScore(dealer.cards)); //Lines 33 and 34 of correction grid
 		dealer.deal("SK", dealer);
 		assertEquals(12, ruleBook.currentScore(dealer.cards)); //Line 35 of correction grid
+		
 				
 	}
 	

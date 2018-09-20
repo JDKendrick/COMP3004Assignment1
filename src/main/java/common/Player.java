@@ -31,4 +31,10 @@ public class Player {
 		
 	}
 	
+	public void Play() {
+		
+		
+		
+	}
+	
 }
