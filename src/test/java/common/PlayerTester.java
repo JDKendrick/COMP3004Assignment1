@@ -9,6 +9,8 @@ public class PlayerTester extends TestCase{
 		Player player = new Player();
 		Dealer dealer = new Dealer();
 		
+		assertEquals("Your hand is empty", player.checkHand());
+		
 		dealer.deal("SK", player);		
 		assertEquals("SK", player.checkHand()); 
 		
