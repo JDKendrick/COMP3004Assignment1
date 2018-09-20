@@ -47,5 +47,15 @@ public class Rule {
 		}
 		
 		return score;		
-	}		
+	}
+	
+	public String winnerCheck(int playerScore, int dealerScore) {
+		
+		if(dealerScore == 21)
+			return "Dealer Wins!";
+		else if(playerScore == 21)
+			return "Player Wins!";		
+		else
+			return "No winner";
+	}
 }

@@ -74,7 +74,7 @@ public class RuleTester extends TestCase {
 		dealer.deal("HA", dealer);
 		dealer.deal("S10", dealer);
 		
-		assertEquals("Dealer Wins!", ruleBook.winnerCheck(currentScore(player.cards), currentScore(dealer.cards)));
+		assertEquals("Dealer Wins!", ruleBook.winnerCheck(ruleBook.currentScore(player.cards), ruleBook.currentScore(dealer.cards)));
 		
 	}
 	
@@ -89,7 +89,7 @@ public class RuleTester extends TestCase {
 		dealer.deal("HA", dealer);
 		dealer.deal("S9", dealer);
 		
-		assertEquals("Player Wins!", ruleBook.winnerCheck(currentScore(player.cards), currentScore(dealer.cards)));
+		assertEquals("Player Wins!", ruleBook.winnerCheck(ruleBook.currentScore(player.cards), ruleBook.currentScore(dealer.cards)));
 		
 	}
 	
@@ -104,7 +104,7 @@ public class RuleTester extends TestCase {
 		dealer.deal("HA", dealer);
 		dealer.deal("S10", dealer);
 		
-		assertEquals("Dealer Wins!", ruleBook.winnerCheck(currentScore(player.cards), currentScore(dealer.cards)));
+		assertEquals("Dealer Wins!", ruleBook.winnerCheck(ruleBook.currentScore(player.cards), ruleBook.currentScore(dealer.cards)));
 		
 	}
 	
