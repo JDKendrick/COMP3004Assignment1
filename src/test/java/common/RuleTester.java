@@ -4,39 +4,48 @@ import junit.framework.TestCase;
 
 public class RuleTester extends TestCase {
 
-	public void testCardValue() {
-		
-		Rule ruleBook = new Rule();
-		
-		assertEquals(10, ruleBook.getCardValue("SK"));
-		assertEquals(10, ruleBook.getCardValue("CK"));
-		assertEquals(10, ruleBook.getCardValue("SQ"));
-		assertEquals(10, ruleBook.getCardValue("SJ"));
-		assertEquals(1, ruleBook.getCardValue("SA"));
-		assertEquals(6, ruleBook.getCardValue("S6"));
-		assertEquals(10, ruleBook.getCardValue("S10"));
-		assertEquals(-1, ruleBook.getCardValue("S11"));
-		
-	}
-	
 	public void testScore() {
 		
 		Rule ruleBook = new Rule();
 		
-		String [] hand = {"SK", "SQ"};		
-		assertEquals("20", ruleBook.currentScore(hand));
+		String [] hand1 = {"SK"};
+		assertEquals(20, ruleBook.currentScore(hand1));
 		
-		hand = {"SK", "SQ", "SJ"};
-		assertEquals("30", ruleBook.currentScore(hand));
+		String [] hand2 = {"CK"};
+		assertEquals(20, ruleBook.currentScore(hand2)); //Proves that suits are ignored
 		
-		hand = {"SK", "SQ", "SA"};
-		assertEquals("21", ruleBook.currentScore(hand));
+		String [] hand3 = {"SQ"};
+		assertEquals(20, ruleBook.currentScore(hand3));
 		
-		hand = {"S6", "SA"};
-		assertEquals(17, ruleBook.currentScore(hand));
+		String [] hand4 = {"SJ"};
+		assertEquals(20, ruleBook.currentScore(hand4));
 		
-		hand = {"S7", "S3", "S5"};
-		assertEquals(15, ruleBook.currentScore(hand));		
+		String [] hand5 = {"SA"};
+		assertEquals(20, ruleBook.currentScore(hand5));
+		
+		String [] hand6 = {"S6"};
+		assertEquals(20, ruleBook.currentScore(hand6));
+		
+		String [] hand7 = {"S10"};
+		assertEquals(20, ruleBook.currentScore(hand7));
+		
+		String [] hand8 = {"S11"};
+		assertEquals(20, ruleBook.currentScore(hand8));
+		
+		String [] hand9 = {"SK", "SQ"};		
+		assertEquals(20, ruleBook.currentScore(hand9));
+		
+		String [] hand10 = {"SK", "SQ", "SJ"};
+		assertEquals(30, ruleBook.currentScore(hand10));
+		
+		String [] hand11 = {"S10", "SQ", "SA"};
+		assertEquals(21, ruleBook.currentScore(hand11)); //Ace is 1 in this case
+		
+		String [] hand12 = {"S6", "SA"};
+		assertEquals(17, ruleBook.currentScore(hand12)); //Ace is 11 in this case
+		
+		String [] hand13 = {"S7", "S3", "S5"};
+		assertEquals(15, ruleBook.currentScore(hand13));		
 		
 	}
 	

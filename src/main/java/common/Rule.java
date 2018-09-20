@@ -11,12 +11,13 @@ public class Rule {
 			case "K": case "Q": case "J":
 				return 10;						
 			case "A":
-				return 1;
+				return 11;
 			case "2": case "3": case "4": case "5": case "6": 
 			case "7": case "8": case "9": case "10":
 				return Integer.parseInt(value);
 			default:
 				return -1;	
 		}	
-	}		
+	}
+	
 }
