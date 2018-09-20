@@ -39,10 +39,10 @@ public class RuleTester extends TestCase {
 		assertEquals(30, ruleBook.currentScore(hand10));
 		
 		String [] hand11 = {"S10", "SQ", "SA"};
-		assertEquals(21, ruleBook.currentScore(hand11)); //Ace is 1 in this case
+		assertEquals(21, ruleBook.currentScore(hand11)); //Ace is 1 in this case (Line 31 of correction grid)
 		
 		String [] hand12 = {"S6", "SA"};
-		assertEquals(17, ruleBook.currentScore(hand12)); //Ace is 11 in this case
+		assertEquals(17, ruleBook.currentScore(hand12)); //Ace is 11 in this case (Line 32 of correction grid)
 		
 		String [] hand13 = {"S7", "S3", "S5"};
 		assertEquals(15, ruleBook.currentScore(hand13));
@@ -50,8 +50,17 @@ public class RuleTester extends TestCase {
 		String [] hand14 = {"S2", "C2", "S6", "S11", "S7"};
 		assertEquals(-1, ruleBook.currentScore(hand14)); //Will return -1 due to there being an invalid card.
 		
-		String [] hand15 = {"SA", "CA", "H9"};
-		assertEquals(21, ruleBook.currentScore(hand15)); //One ace will be 1 and the other will be 11.
+		//The following test case tests lines 33 - 35 of the test grid
+		
+		Dealer dealer = new Dealer();
+		
+		dealer.deal("SA", dealer);
+		assertEquals(11, ruleBook.currentScore(dealer.cards));
+		dealer.deal("HA", dealer);
+		assertEquals(12, ruleBook.currentScore(dealer.cards)); //Lines 33 and 34 of correction grid
+		dealer.deal("SK", dealer);
+		assertEquals(12, ruleBook.currentScore(dealer.cards)); //Line 35 of correction grid
+		
 		
 	}
 	
