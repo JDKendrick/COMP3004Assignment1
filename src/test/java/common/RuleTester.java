@@ -60,8 +60,53 @@ public class RuleTester extends TestCase {
 		assertEquals(12, ruleBook.currentScore(dealer.cards)); //Lines 33 and 34 of correction grid
 		dealer.deal("SK", dealer);
 		assertEquals(12, ruleBook.currentScore(dealer.cards)); //Line 35 of correction grid
+				
+	}
+	
+	public void testDealerBlackjack() {
 		
+		Rule ruleBook = new Rule();
+		Dealer dealer = new Dealer();
+		Player player = new Player();
+		
+		dealer.deal("C3", player);
+		dealer.deal("H6", player);
+		dealer.deal("HA", dealer);
+		dealer.deal("S10", dealer);
+		
+		assertEquals("Dealer Wins!", ruleBook.winnerCheck(currentScore(player.cards), currentScore(dealer.cards)));
+		
+	}
+	
+	public void testPlayerBlackjack() {
+		
+		Rule ruleBook = new Rule();
+		Dealer dealer = new Dealer();
+		Player player = new Player();
+		
+		dealer.deal("CQ", player);
+		dealer.deal("HA", player);
+		dealer.deal("HA", dealer);
+		dealer.deal("S9", dealer);
+		
+		assertEquals("Player Wins!", ruleBook.winnerCheck(currentScore(player.cards), currentScore(dealer.cards)));
+		
+	}
+	
+	public void testBlackjackTie() {
+		
+		Rule ruleBook = new Rule();
+		Dealer dealer = new Dealer();
+		Player player = new Player();
+		
+		dealer.deal("CA", player);
+		dealer.deal("HJ", player);
+		dealer.deal("HA", dealer);
+		dealer.deal("S10", dealer);
+		
+		assertEquals("Dealer Wins!", ruleBook.winnerCheck(currentScore(player.cards), currentScore(dealer.cards)));
 		
 	}
 	
 }
+
