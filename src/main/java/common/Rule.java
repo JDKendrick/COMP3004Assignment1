@@ -8,7 +8,10 @@ public class Rule {
 		int score = 0;
 		
 		for (int i = 0; i < s.length; i++) {
-		
+			
+			if(s[i] == null)
+				break;
+			
 			value = s[i].substring(1, s[i].length());
 		
 			switch(value) {
