@@ -50,6 +50,9 @@ public class RuleTester extends TestCase {
 		String [] hand14 = {"S2", "C2", "S6", "S11", "S7"};
 		assertEquals(-1, ruleBook.currentScore(hand14)); //Will return -1 due to there being an invalid card.
 		
+		String [] hand15 = {"SA", "CA", "H9"};
+		assertEquals(21, ruleBook.currentScore(hand15)); //One ace will be 1 and the other will be 11.
+		
 	}
 	
 }
